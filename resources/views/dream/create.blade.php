@@ -39,6 +39,34 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="lucidity" class="col-md-4 col-form-label text-md-end">Lucidity</label>
+
+                            <div class="col-md-6">
+                                <input id="lucidity" type="number" min="0" max="10" step="1" class="form-control @error('lucidity') is-invalid @enderror" name="lucidity" value="{{ old('lucidity') }}" required autocomplete="lucidity" autofocus>
+
+                                @error('lucidity')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="rating" class="col-md-4 col-form-label text-md-end">Rating</label>
+
+                            <div class="col-md-6">
+                                <input id="rating" type="number" min="0" max="10" step="1" class="form-control @error('rating') is-invalid @enderror" name="rating" value="{{ old('rating') }}" required autocomplete="rating" autofocus>
+
+                                @error('rating')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

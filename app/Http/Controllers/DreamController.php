@@ -35,6 +35,8 @@ class DreamController extends Controller
             'user_id' => Auth::id(),
             'title' => $request['title'],
             'description' => $request['description'],
+            'rating' => $request['rating'],
+            'lucidity' => $request['lucidity'],
         ]);
         return redirect(route('dreams.index'));
     }
