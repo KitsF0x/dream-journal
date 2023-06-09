@@ -13,7 +13,9 @@ class DreamController extends Controller
      */
     public function index()
     {
-        //
+        return view('dream.index', [
+            'dreams' => Dream::where('user_id', Auth::id())->get()
+        ]);
     }
 
     /**

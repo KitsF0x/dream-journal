@@ -25,6 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Dreams routes
 
+// Display all dreams of current user
+Route::get('/dreams', [DreamController::class, 'index'])->name('dreams.index')->middleware('auth');
 // Create dream form
 Route::get('/dreams/create', [DreamController::class, 'create'])->name('dreams.create')->middleware('auth');
 // Show details of dream with id
