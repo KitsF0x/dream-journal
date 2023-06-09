@@ -23,7 +23,7 @@
                                     </form>
                                     
                                     <button class="btn btn-warning">Edit</button>
-                                    <form action="{{ route('dreams.destroy', $dream->id) }}" method="POST">
+                                    <form action="{{ route('dreams.destroy', $dream) }}" method="POST">
                                         @method('DELETE')
                                         @csrf
                                         <button class="btn btn-danger">Delete</button>
