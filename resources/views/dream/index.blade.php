@@ -12,6 +12,12 @@
                             <div class="card-body">
                                 <div class="card-title border-bottom"><h3>{{ $dream->title }}</h3></div>
                                 <p>{{ $dream->description }}</p>
+                                <div class="buttons">                              
+                                    <button class="btn btn-success">Favourite</button>
+                                    <button class="btn btn-primary">Show details</button>
+                                    <button class="btn btn-warning">Edit</button>
+                                    <button class="btn btn-danger">Delete</button>
+                                </div>
                             </div>
                         </div>
                         
