@@ -44,9 +44,9 @@ class DreamController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Dream $dream)
+    public function show($id)
     {
-        //
+        return view('dream.show', ['dream' => Dream::find($id)]);
     }
 
     /**

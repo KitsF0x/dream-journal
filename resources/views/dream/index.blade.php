@@ -16,7 +16,12 @@
                                 <p>{{ $dream->description }}</p>
                                 <div class="buttons">
                                     <button class="btn btn-success">Favourite</button>
-                                    <button class="btn btn-primary">Show details</button>
+                                    <form action="{{ route('dreams.show', $dream->id) }}" method="POST">
+                                        @method('GET')
+                                        @csrf
+                                        <button class="btn btn-primary">Show details</button>
+                                    </form>
+                                    
                                     <button class="btn btn-warning">Edit</button>
                                     <form action="{{ route('dreams.destroy', $dream->id) }}" method="POST">
                                         @method('DELETE')
