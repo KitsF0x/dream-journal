@@ -21,8 +21,12 @@
                                         @csrf
                                         <button class="btn btn-primary">Show details</button>
                                     </form>
+                                    <form action="{{ route('dreams.edit', $dream) }}" method="POST">
+                                        @csrf
+                                        @method('GET')
+                                        <button class="btn btn-warning">Edit</button>
+                                    </form>
                                     
-                                    <button class="btn btn-warning">Edit</button>
                                     <form action="{{ route('dreams.destroy', $dream) }}" method="POST">
                                         @method('DELETE')
                                         @csrf

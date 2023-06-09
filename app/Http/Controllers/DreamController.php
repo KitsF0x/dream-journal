@@ -54,7 +54,7 @@ class DreamController extends Controller
      */
     public function edit(Dream $dream)
     {
-        //
+        return view('dream.edit', ['dream' => $dream]);
     }
 
     /**
@@ -62,7 +62,9 @@ class DreamController extends Controller
      */
     public function update(Request $request, Dream $dream)
     {
-        //
+        $dream->fill($request->all());
+        $dream->save();
+        return redirect(route('dreams.index'));
     }
 
     /**
