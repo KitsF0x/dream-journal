@@ -22,6 +22,7 @@
                         </div>
                         
                     @endforeach
+                    <a href="{{route('dreams.create')}}"><button class="btn btn-primary">Add dream</button></a>
                 </div>
             </div>
         </div>
