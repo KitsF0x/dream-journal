@@ -36,7 +36,7 @@ class DreamController extends Controller
             'title' => $request['title'],
             'description' => $request['description'],
         ]);
-        return redirect('/');
+        return redirect(route('dreams.index'));
     }
 
     /**
