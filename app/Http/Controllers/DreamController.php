@@ -68,6 +68,7 @@ class DreamController extends Controller
      */
     public function destroy(Dream $dream)
     {
-        //
+        $dream->delete();
+        return redirect(route('dreams.index'));
     }
 }

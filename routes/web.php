@@ -33,3 +33,5 @@ Route::get('/dreams/create', [DreamController::class, 'create'])->name('dreams.c
 Route::get('/dreams/{id}', [DreamController::class, 'show'])->name('dreams.show')->middleware('auth');
 // Store dream in database
 Route::post('/dreams', [DreamController::class, 'store'])->name('dreams.store')->middleware('auth');
+// Delete dream fro database
+Route::delete('/dreams/{dream}', [DreamController::class, 'destroy'])->name('dreams.destroy')->middleware('auth');
