@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DreamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Dreams routes
+
+// Create dream form
+Route::get('/dreams/create', [DreamController::class, 'create'])->name('dreams.create')->middleware('auth');
+// Show details of dream with id
+Route::get('/dreams/{id}', [DreamController::class, 'show'])->name('dreams.show')->middleware('auth');
+// Store dream in database
+Route::post('/dreams', [DreamController::class, 'store'])->name('dreams.store')->middleware('auth');
