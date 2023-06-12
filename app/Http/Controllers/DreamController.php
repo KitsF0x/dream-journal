@@ -37,6 +37,7 @@ class DreamController extends Controller
             'description' => $request['description'],
             'rating' => $request['rating'],
             'lucidity' => $request['lucidity'],
+            'favorite' => false
         ]);
         return redirect(route('dreams.index'));
     }
@@ -73,6 +74,19 @@ class DreamController extends Controller
     public function destroy(Dream $dream)
     {
         $dream->delete();
+        return redirect(route('dreams.index'));
+    }
+
+    /**
+     * Favorite or unfavorite dream by id.
+     * 
+     * @param Dream $dream Dream.
+     * @param bool $favorite True to favorite dream. False to unfavorite. 
+     */
+    public function favorite(Dream $dream, bool $favorite)
+    {
+        $dream->favorite = $favorite;
+        $dream->save();
         return redirect(route('dreams.index'));
     }
 }

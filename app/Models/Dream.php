@@ -13,6 +13,7 @@ class Dream extends Model
         'title',
         'description',
         'rating',
-        'lucidity'
+        'lucidity',
+        'favorite'
     ];
 }

@@ -27,6 +27,10 @@
                                         <td>Lucidity</td>
                                         <td scope="row">{{ $dream->lucidity }}/10</td>
                                     </tr>
+                                    <tr>
+                                        <td>Favorite</td>
+                                        <td scope="row">{{ $dream->favorite ? 'true' : 'false' }}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

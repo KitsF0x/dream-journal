@@ -15,7 +15,17 @@
                                 </div>
                                 <p>{{ $dream->description }}</p>
                                 <div class="buttons">
-                                    <button class="btn btn-success">Favourite</button>
+                                    <form action="{{ route('dreams.favorite', [$dream, (int)!$dream->favorite]) }}"
+                                        method="POST">
+                                        <button class="btn btn-success" type="submit">
+                                            @csrf
+                                            @if (!$dream->favorite)
+                                                Favourite
+                                            @else
+                                                Unfavorite
+                                            @endif
+                                        </button>
+                                    </form>
                                     <form action="{{ route('dreams.show', $dream->id) }}" method="POST">
                                         @method('GET')
                                         @csrf
@@ -26,7 +36,7 @@
                                         @method('GET')
                                         <button class="btn btn-warning">Edit</button>
                                     </form>
-                                    
+
                                     <form action="{{ route('dreams.destroy', $dream) }}" method="POST">
                                         @method('DELETE')
                                         @csrf

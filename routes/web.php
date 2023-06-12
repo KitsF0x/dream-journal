@@ -39,3 +39,5 @@ Route::delete('/dreams/{dream}', [DreamController::class, 'destroy'])->name('dre
 Route::get('/dreams/edit/{dream}', [DreamController::class, 'edit'])->name('dreams.edit')->middleware('auth');
 // Update dream
 Route::post('/dreams/update/{dream}', [DreamController::class, 'update'])->name('dreams.update')->middleware('auth');
+// Favorite or unfavorite dream
+Route::post('/dream/favorite/{dream}/{favorite}', [DreamController::class, 'favorite'])->name('dreams.favorite')->middleware('auth');
